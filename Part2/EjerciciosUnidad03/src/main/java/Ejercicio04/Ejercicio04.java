@@ -11,33 +11,20 @@ import java.util.function.Predicate;
 public class Ejercicio04 {
 	public static void main(String[] args) {
 		String  content;
-		String[]  contentSplitted;
-		int     words;
-		List<String>    siglas = new ArrayList<>();
-		List<String>    puntaciones = new ArrayList<>();
-		int             aux = 0;
+		String  stopwords;
+		List<String>    siglas;
+		List<String>    puntaciones;
 
 		content = leer("articulo.txt");
-		contentSplitted = content.trim().split("\\s+");
-		words = contentSplitted.length;
-		System.out.println(words);
-		for (String a: content.trim().
-				replaceAll(",", "").
-				replaceAll("\\(", "").
-				replaceAll("\\)", "").
-				split("\\s+")){
-			for (Character b: a.toCharArray()){
-				if (!Character.isUpperCase(b)) {
-					aux = 1;
-					break;
-				}
-			}
-			if (aux == 0){
-				siglas.add(a);
-			}
-			aux = 0;
-		}
-		System.out.println(siglas.toString());
+		Operations.word_counter(content);
+		siglas = Operations.siglas(content);
+		puntaciones = Operations.punts(content);
+		content = Operations.toUpper(content);
+		content = Operations.eraseAccents(content);
+		content = Operations.eraseNumbers(content);
+		stopwords = leer("stopwords.txt");
+		content = Operations.eraseWords(content, stopwords);
+		//puntuacion = Operations.score(content);
 	}
 
 	public static String leer(String rutaFichero) {

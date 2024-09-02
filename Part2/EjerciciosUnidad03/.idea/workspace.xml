@@ -7,6 +7,8 @@
     <list default="true" id="198eed92-e5c6-41a6-8225-ed40e8187951" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ejercicio04/Ejercicio04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ejercicio04/Ejercicio04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ejercicio04/Operations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ejercicio04/Operations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elias/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elias/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +39,7 @@
     "Application.Ejercicio02.executor": "Run",
     "Application.Ejercicio03.executor": "Run",
     "Application.Ejercicio04.executor": "Run",
+    "Application.Ejercicio05.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.EjerciciosUnidad03 [clean].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",

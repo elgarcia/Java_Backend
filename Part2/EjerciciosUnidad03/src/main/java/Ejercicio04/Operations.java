@@ -1,7 +1,9 @@
 package Ejercicio04;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Operations {
 	public static void  word_counter(String content){
@@ -96,7 +98,32 @@ public class Operations {
 		return (nContent);
 	}
 
-	public static int   score(String content){
-		return (1);
+	public static double   score(String content, String positive, String negative){
+		Map<String, String> pcontent = new HashMap<>();
+		Map<String, String> ncontent = new HashMap<>();
+		double              fScore = 0;
+
+		for(String a: positive.split("\n")){
+			String[]    parts = a.split(" ");
+			if (parts.length == 2){
+				pcontent.put(parts[0].toUpperCase(), parts[1]);
+			}
+		}
+		for(String a: negative.split("\n")){
+			String[]    parts = a.split(" ");
+			if (parts.length == 2){
+				ncontent.put(parts[0].toUpperCase(), parts[1]);
+			}
+		}
+		for (String a: content.split(" ")){
+			if (pcontent.containsKey(a)){
+				fScore += Double.parseDouble(pcontent.get(a));
+			}
+			else if (ncontent.containsKey(a)){
+				fScore += Double.parseDouble(ncontent.get(a));
+			}
+		}
+		System.out.println("Score = " + fScore);
+		return (fScore);
 	}
 }

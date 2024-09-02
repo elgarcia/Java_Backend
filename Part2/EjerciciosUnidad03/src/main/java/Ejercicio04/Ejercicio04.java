@@ -10,21 +10,26 @@ import java.util.function.Predicate;
 
 public class Ejercicio04 {
 	public static void main(String[] args) {
-		String  content;
-		String  stopwords;
+		String          content;
+		String          stopwords;
+		String          positive;
+		String          negative;
+		double          puntuacion;
 		List<String>    siglas;
 		List<String>    puntaciones;
 
 		content = leer("articulo.txt");
+		stopwords = leer("stopwords.txt");
+		positive = leer("positive_lex.txt");
+		negative = leer("negative_lex.txt");
 		Operations.word_counter(content);
 		siglas = Operations.siglas(content);
 		puntaciones = Operations.punts(content);
 		content = Operations.toUpper(content);
 		content = Operations.eraseAccents(content);
 		content = Operations.eraseNumbers(content);
-		stopwords = leer("stopwords.txt");
 		content = Operations.eraseWords(content, stopwords);
-		//puntuacion = Operations.score(content);
+		puntuacion = Operations.score(content, positive, negative);
 	}
 
 	public static String leer(String rutaFichero) {

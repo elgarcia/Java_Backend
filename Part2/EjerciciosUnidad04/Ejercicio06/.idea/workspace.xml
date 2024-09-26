@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f8efff0e-3127-42d3-9864-89f985b70157" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Ejercicio02/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio02/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio02/src/main/java/com/elias/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio02/src/test/java/com/elias/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio03/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio03/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio03/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio03/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio03/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio03/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio03/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio03/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio03/src/main/java/com/elias/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio03/src/test/java/com/elias/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio05/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio05/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio05/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio05/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio05/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio05/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio05/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio05/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio05/src/main/java/com/elias/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ejercicio05/src/test/java/com/elias/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/elias/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/elias/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ejercicios04/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ejercicios04/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ejercicios04/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ejercicios04/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ejercicios04/src/main/java/com/elias/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ejercicios04/src/test/java/com/elias/MainTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2mKZPruETDiTka3J5rAoFMLWyRy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.Ejercicio06 [clean].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f8efff0e-3127-42d3-9864-89f985b70157" name="Changes" comment="" />
+      <created>1726827208313</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726827208313</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="edea9c74-01bf-4a8a-9634-a061e7c9cc1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/elias/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/src/main/java/com/elias/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../applib/src/test/java/com/elias/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicios04/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicios04/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicios04/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicios04/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicios04/src/main/java/com/elias/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicios04/src/test/java/com/elias/MainTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2mF3zgdOQDfBJyUc8WehtzPqEDj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.app1 [clean].executor": "Run",
+    "Maven.app1 [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="edea9c74-01bf-4a8a-9634-a061e7c9cc1c" name="Changes" comment="" />
+      <created>1726658762875</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726658762875</updated>
+    </task>
+    <servers />
+  </component>
+</project>

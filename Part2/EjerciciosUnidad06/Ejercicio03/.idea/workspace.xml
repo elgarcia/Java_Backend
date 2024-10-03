@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe798f5d-d4d2-4465-8f4a-351042800fce" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../EjerciciosUnidad05/Ejercicio06/src/main/java/com/elias/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../EjerciciosUnidad05/Ejercicio06/src/main/java/com/elias/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EjerciciosUnidad05/unidad05/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EjerciciosUnidad05/unidad05/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EjerciciosUnidad05/unidad05/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EjerciciosUnidad05/unidad05/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EjerciciosUnidad05/unidad05/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EjerciciosUnidad05/unidad05/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EjerciciosUnidad05/unidad05/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/src/main/java/com/cloudftic/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/src/main/java/com/cloudftic/Ejercicio01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/src/main/java/com/cloudftic/Ejercicio02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/src/main/java/com/cloudftic/Ejercicio03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/src/main/java/com/cloudftic/Ejercicio04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/src/main/java/com/cloudftic/Ejercicio05.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/src/main/java/com/cloudftic/Ejercicio06.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unidad05/src/main/java/module-info.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2mvkdueOQwudYGqP3Y1nTKH5lZw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.Ejercicio03 [clean].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe798f5d-d4d2-4465-8f4a-351042800fce" name="Changes" comment="" />
+      <created>1727964531221</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727964531221</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -3,6 +3,7 @@ package com.elias;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Arrays;
 
 public class Main
 {
@@ -18,5 +19,6 @@ public class Main
         System.out.println(citas.contarCitasPorDia().toString());
         System.out.println(citas.existenCitasEn(LocalDate.of(2020,10,03)));
         System.out.println(citas.consultarCon((date, meet) -> meet.startsWith("R")));
+        
     }
 }

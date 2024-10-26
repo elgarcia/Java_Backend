@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Mediciones</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Mediciones</h1>
+        <a th:href="@{/api/mediciones/form}" class="btn btn-primary">Agregar Nueva Medicion</a>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
+                <th>Año</th>
+                <th>Temperatura</th>
+                <th>Viento</th>
+                <th>Precipitacion</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="medicion: ${mediciones}">
+                <td th:text="${medicion.pkMedicionID}"></td>
+                <td th:text="${medicion.latitud}"></td>
+                <td th:text="${medicion.longitud}"></td>
+                <td th:text="${medicion.any}"></td>
+                <td th:text="${medicion.temperatura}"></td>
+                <td th:text="${medicion.viento}"></td>
+                <td th:text="${medicion.precipitacion}"></td>
+                <td>
+                    <a th:href="@{/api/mediciones/editar/{id}(id=${medicion.pkMedicionID})}" class="btn bton-warning">Editar</a>
+                    <a th:href="@{/api/mediciones/eliminar/{id}(id=${medicion.pkMedicionID})}" class="btn btn-danger"
+                       onclick="return confirm('¿Eliminar esta medicion?');">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -35,13 +35,18 @@ public class MedicionService {
             dto.setViento(medicion.getViento());
             dto.setPrecipitacion(medicion.getPrecipitacion());
 
-            radiaciones.stream()
-                    .filter(r -> r.getLatitud().equals(medicion.getLatitud())
-                            && r.getLongitud().equals(medicion.getLongitud())
-                            && r.getAny().equals(medicion.getAnho()))
-                    .findFirst()
-                    .ifPresent(r -> dto.setRadiacion(r.getRadiacion()));
+            String  latitud = medicion.getLatitud();
+            String  longitud = medicion.getLongitud();
+            Short   anho = medicion.getAnho();
 
+            if (latitud != null && longitud !=null && anho != null){
+                radiaciones.stream()
+                        .filter(r -> latitud.equals(r.getLatitud())
+                                && longitud.equals(r.getLongitud())
+                                && anho.equals(r.getAny()))
+                        .findFirst()
+                        .ifPresent(r -> dto.setRadiacion(r.getRadiacion()));
+            }
             medicionDTO.add(dto);
         }
         return medicionDTO;
@@ -62,6 +67,13 @@ public class MedicionService {
 
     public List<MedicionEntity> findAll() {
         return medicionRepo.findAll();
+    }
+
+    public MedicionDTO  getMedicionById(Long id) throws IOException {
+        return this.loadMediciones().stream()
+                .filter(med -> med.getPkMedicionID().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 
     public List<MedicionEntity> findByAny(Short any) {

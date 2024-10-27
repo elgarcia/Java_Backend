@@ -7,7 +7,7 @@ public class MedicionDTO {
     private Long pkMedicionID;
     private String latitud;
     private String longitud;
-    private Short any;
+    private Short anho;
     private Short temperatura;
     private Short viento;
     private Short precipitacion;

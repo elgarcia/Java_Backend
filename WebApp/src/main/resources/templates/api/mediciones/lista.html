@@ -19,9 +19,10 @@
                 <th>Latitud</th>
                 <th>Longitud</th>
                 <th>Año</th>
-                <th>Temperatura</th>
-                <th>Viento</th>
-                <th>Precipitacion</th>
+                <th>Temperatura (Cº)</th>
+                <th>Viento(m/s)</th>
+                <th>Precipitacion(mm/h)</th>
+                <th>Radiacion</th>
                 <th>Acciones</th>
             </tr>
             </thead>
@@ -30,12 +31,13 @@
                 <td th:text="${medicion.pkMedicionID}"></td>
                 <td th:text="${medicion.latitud}"></td>
                 <td th:text="${medicion.longitud}"></td>
-                <td th:text="${medicion.any}"></td>
+                <td th:text="${medicion.anho}"></td>
                 <td th:text="${medicion.temperatura}"></td>
                 <td th:text="${medicion.viento}"></td>
                 <td th:text="${medicion.precipitacion}"></td>
+                <td th:text="${medicion.radiacion}"></td>
                 <td>
-                    <a th:href="@{/api/mediciones/editar/{id}(id=${medicion.pkMedicionID})}" class="btn bton-warning">Editar</a>
+                    <a th:href="@{/api/mediciones/editar/{id}(id=${medicion.pkMedicionID})}" class="btn btn-warning">Editar</a>
                     <a th:href="@{/api/mediciones/eliminar/{id}(id=${medicion.pkMedicionID})}" class="btn btn-danger"
                        onclick="return confirm('¿Eliminar esta medicion?');">Eliminar</a>
                 </td>

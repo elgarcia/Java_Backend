@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @Controller
 @RequestMapping("/api/mediciones")
@@ -34,7 +33,7 @@ public class MedicionController {
     }
 
     @GetMapping("/editar/{id}")
-    public String mostrarFormularioEdicion(@PathVariable Long id, Model model) {
+    public String showEditForm(@PathVariable("id") Long id, Model model) {
         MedicionDTO medicion = medicionService.getMedicionById(id);
         if (medicion == null){
             return ("redirect:/api/mediciones");
@@ -44,13 +43,13 @@ public class MedicionController {
     }
 
     @PostMapping("/editar/{id}")
-    public String   updateMedicion(@PathVariable Long id, @ModelAttribute MedicionDTO medicion){
+    public String   updateMedicion(@PathVariable("id") Long id, @ModelAttribute MedicionDTO medicion){
         medicionService.updateMedicion(id, medicion);
         return ("redirect:/api/mediciones");
     }
 
     @GetMapping("/eliminar/{id}")
-    public String   deleteMedicion(@PathVariable Long id){
+    public String   deleteMedicion(@PathVariable("id") Long id){
         medicionService.deleteMedicion(id);
         return ("redirect:/api/mediciones");
     }

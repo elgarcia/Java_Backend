@@ -19,18 +19,17 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
+
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder){
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
         manager.createUser(User.withUsername("user")
-                .password("123")
+                .password(passwordEncoder.encode("123"))
                 .roles("USER")
-                .passwordEncoder(pw -> passwordEncoder.encode(pw))
                 .build());
         manager.createUser(User.withUsername("admin")
-                .password("abc")
+                .password(passwordEncoder.encode("abc"))
                 .roles("USER", "ADMIN")
-                .passwordEncoder(pw -> passwordEncoder.encode(pw))
                 .build());
         return manager;
     }
@@ -43,7 +42,10 @@ public class SecurityConfig {
                         .hasRole("ADMIN")
                         .requestMatchers("/api/mediciones/**").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated())
-                .formLogin(auth -> auth.permitAll())
+                .formLogin(auth -> auth
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/api/mediciones",true)
+                        .permitAll())
                 .logout(logout -> logout.permitAll())
                 .build();
     }

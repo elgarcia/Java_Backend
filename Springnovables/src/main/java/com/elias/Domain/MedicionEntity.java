@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "EGSMediciones")
 public class MedicionEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long    pk_MedicionID;
 
     private String  latitud;

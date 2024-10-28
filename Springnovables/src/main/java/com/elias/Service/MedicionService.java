@@ -19,6 +19,15 @@ public class MedicionService {
     @Autowired
     private RadiacionService    radiacionService;
 
+    private Long getNextAvailableId() {
+        Long    nextId = 1L;
+
+        while (medicionRepo.existsById(nextId)) {
+            nextId++;
+        }
+        return nextId;
+    }
+
     public List<MedicionDTO>    loadMediciones() throws IOException{
         List<MedicionEntity>  mediciones = medicionRepo.findAll();
         List<Radiacion> radiaciones = radiacionService.loadRadiacion();
@@ -53,6 +62,7 @@ public class MedicionService {
     }
 
     public MedicionEntity create(MedicionEntity medicion) {
+        medicion.setPk_MedicionID(getNextAvailableId());
         return medicionRepo.save(medicion);
     }
 

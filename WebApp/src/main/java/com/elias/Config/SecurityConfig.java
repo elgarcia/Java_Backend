@@ -10,6 +10,8 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -38,15 +40,22 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/api/mediciones/form", "/api/mediciones/editar/**", "/api/mediciones/eliminar/**")
+                        .requestMatchers("/mediciones/form", "/mediciones/editar/**", "/mediciones/eliminar/**")
                         .hasRole("ADMIN")
-                        .requestMatchers("/api/mediciones/**").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/mediciones/**").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated())
                 .formLogin(auth -> auth
                         .loginPage("/login")
-                        .defaultSuccessUrl("/api/mediciones",true)
+                        .defaultSuccessUrl("/mediciones",true)
                         .permitAll())
-                .logout(logout -> logout.permitAll())
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login?logout=true")
+                        .invalidateHttpSession(true)
+                        .clearAuthentication(true)
+                        .deleteCookies("JSESSIONID") // Delete session cookie
+                        .permitAll()
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET")))
                 .build();
     }
 }

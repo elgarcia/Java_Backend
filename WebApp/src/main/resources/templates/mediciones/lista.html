@@ -9,9 +9,22 @@
     <title>Mediciones</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" stlye>
         <h1>Lista de Mediciones</h1>
-        <a th:href="@{/api/mediciones/form}" class="btn btn-primary">Agregar Nueva Medicion</a>
+        <div id="buttons" style="display:flex; justify-content: space-between; padding: 20px">
+            <a th:href="@{/mediciones/form}" class="btn btn-primary">Agregar Nueva Medicion</a>
+            <form th:action="@{/mediciones}" method="get" style="display:flex;white-space:nowrap;gap:10px;align-items:center">
+                <label for="yearSelect" style="margin-right: 10px">Select a year:</label>
+                <select name="year" id="yearSelect" class="form-select" style="width:60%; margin-right:10px">
+                    <option value="" th:selected="${selectedYear == null}">All years</option>
+                    <option th:each="year : ${availableYears}" th:value="${year}" th:text="${year}"
+                    th:selected="${year == selectedYear}"></option>
+                </select>
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </form>
+            <a th:href="@{/logout}" class="btn btn-secondary">Logout</a>
+        </div>
+
         <table class="table">
             <thead>
             <tr>
@@ -37,8 +50,8 @@
                 <td th:text="${medicion.precipitacion}"></td>
                 <td th:text="${medicion.radiacion}"></td>
                 <td>
-                    <a th:href="@{/api/mediciones/editar/{id}(id=${medicion.pkMedicionID})}" class="btn btn-warning">Editar</a>
-                    <a th:href="@{/api/mediciones/eliminar/{id}(id=${medicion.pkMedicionID})}" class="btn btn-danger"
+                    <a th:href="@{/mediciones/editar/{id}(id=${medicion.pkMedicionID})}" class="btn btn-warning">Editar</a>
+                    <a th:href="@{/mediciones/eliminar/{id}(id=${medicion.pkMedicionID})}" class="btn btn-danger"
                        onclick="return confirm('¿Eliminar esta medicion?');">Eliminar</a>
                 </td>
             </tr>

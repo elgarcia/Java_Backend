@@ -79,4 +79,8 @@ public class MedicionService {
     public List<MedicionEntity> findByAny(Short any) {
         return medicionRepo.findByAnho(any);
     }
+
+    public List<Short>  getAllYears() {
+        return medicionRepo.findDistinctAnho();
+    }
 }

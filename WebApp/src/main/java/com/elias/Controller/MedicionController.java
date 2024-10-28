@@ -7,50 +7,55 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @Controller
-@RequestMapping("/api/mediciones")
+@RequestMapping("/mediciones")
 public class MedicionController {
     @Autowired
     private MedicionService medicionService;
 
     @GetMapping
-    public String   getMediciones(Model model){
-        model.addAttribute("mediciones", medicionService.getAllMediciones());
-        return ("/api/mediciones/lista");
+    public String   getMediciones(@RequestParam(value = "year", required = false) Short anho, Model model){
+        List<MedicionDTO>   filteredMediciones = (anho != null) ? medicionService.filterByAny(anho) : medicionService.getAllMediciones();
+        model.addAttribute("mediciones", filteredMediciones);
+        model.addAttribute("selectedYear", anho);
+        model.addAttribute("availableYears", medicionService.getAvailableYears());
+        return ("/mediciones/lista");
     }
 
     @GetMapping("/form")
     public String   medicionForm(Model model){
         model.addAttribute("medicion", new MedicionDTO());
-        return ("/api/mediciones/form");
+        return ("/mediciones/form");
     }
 
     @PostMapping
     public String   createMedicion(@ModelAttribute MedicionDTO medicion){
         medicionService.createMedicion(medicion);
-        return ("redirect:/api/mediciones");
+        return ("redirect:/mediciones");
     }
 
     @GetMapping("/editar/{id}")
     public String showEditForm(@PathVariable("id") Long id, Model model) {
         MedicionDTO medicion = medicionService.getMedicionById(id);
         if (medicion == null){
-            return ("redirect:/api/mediciones");
+            return ("redirect:/mediciones");
         }
         model.addAttribute("medicion", medicion);
-        return "/api/mediciones/form";
+        return "/mediciones/form";
     }
 
     @PostMapping("/editar/{id}")
     public String   updateMedicion(@PathVariable("id") Long id, @ModelAttribute MedicionDTO medicion){
         medicionService.updateMedicion(id, medicion);
-        return ("redirect:/api/mediciones");
+        return ("redirect:/mediciones");
     }
 
     @GetMapping("/eliminar/{id}")
     public String   deleteMedicion(@PathVariable("id") Long id){
         medicionService.deleteMedicion(id);
-        return ("redirect:/api/mediciones");
+        return ("redirect:/mediciones");
     }
 }

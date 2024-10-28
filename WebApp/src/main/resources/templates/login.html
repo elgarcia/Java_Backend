@@ -7,6 +7,7 @@
 <body style="text-align:center;display:flex">
 <form style="margin:auto" th:action="@{/login}" method="post">
     <h2 style="margin:20px">Login</h2>
+    <div th:if="${message}" class="alert alert-success" th:text="${message}"></div>
     <div class="mb-3">
         <label for="UserInput">Username</label>
         <input type="text" class="form-control" name="username" required id="UserInput"/>

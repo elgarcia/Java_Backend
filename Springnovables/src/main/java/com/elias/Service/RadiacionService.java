@@ -1,7 +1,11 @@
 package com.elias.Service;
 
 import com.elias.Domain.Radiacion;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -13,38 +17,34 @@ import java.util.List;
 @Service
 public class RadiacionService {
 
-    private static final String FILE_NAME = "file.json";
+    private static final String FILE_NAME = "src/main/resources/static/file.json";
 
     public void saveRadiacion(Radiacion radiacion) throws IOException{
         ObjectMapper oMapper = new ObjectMapper();
-        URL resource = getClass().getClassLoader().getResource(FILE_NAME);
-        if (resource == null){
-            throw new FileNotFoundException("File not found: " + FILE_NAME);
+        File file = new File(FILE_NAME);
+        if (!file.exists()){
+            throw new FileNotFoundException();
         }
-        File file = new File(resource.getPath());
-
-        try(FileWriter fileWriter = new FileWriter(file, true)){
-            String  jsonString = oMapper.writeValueAsString(radiacion);
-            System.out.println(jsonString);
-            fileWriter.write(jsonString + "\n");
-        }
+        List<Radiacion> radiaciones = loadRadiacion();
+        radiaciones.add(radiacion);
+        oMapper.writeValue(file, radiaciones);
     }
 
     public List<Radiacion> loadRadiacion() throws IOException{
         ObjectMapper    oMapper = new ObjectMapper();
         List<Radiacion> radiacions = new ArrayList<>();
-        URL resource = getClass().getClassLoader().getResource(FILE_NAME);
-        if (resource == null){
-            throw new FileNotFoundException("File not found: " + FILE_NAME);
-        }
-        File file = new File(resource.getPath());
+        File file = new File(FILE_NAME);
 
         if (file.exists()){
             try (BufferedReader reader = Files.newBufferedReader(file.toPath())){
                 String  line;
                 while((line = reader.readLine()) != null){
-                    Radiacion   radiacion = oMapper.readValue(line, Radiacion.class);
-                    radiacions.add(radiacion);
+                    try{
+                        Radiacion   radiacion = oMapper.readValue(line, Radiacion.class);
+                        radiacions.add(radiacion);
+                    } catch (JsonMappingException | JsonParseException e) {
+                        radiacions = oMapper.readValue(file, new TypeReference<List<Radiacion>>() {});
+                    }
                 }
             }
         }
@@ -57,11 +57,7 @@ public class RadiacionService {
         radiaciones.replaceAll(radiacion -> radiacion.getId().equals(id) ? newRadiacion: radiacion);
 
         ObjectMapper oMapper = new ObjectMapper();
-        URL resource = getClass().getClassLoader().getResource(FILE_NAME);
-        if (resource == null){
-            throw new FileNotFoundException("File not found: " + FILE_NAME);
-        }
-        File file = new File(resource.getPath());
+        File file = new File(FILE_NAME);
         oMapper.writeValue(file, radiaciones);
     }
 
@@ -71,11 +67,14 @@ public class RadiacionService {
         radiaciones.removeIf(radiacion -> radiacion.getId().equals(id));
 
         ObjectMapper oMapper = new ObjectMapper();
-        URL resource = getClass().getClassLoader().getResource(FILE_NAME);
-        if (resource == null){
-            throw new FileNotFoundException("File not found: " + FILE_NAME);
+        File file = new File(FILE_NAME);
+        if (radiaciones.isEmpty()){
+            try (FileWriter filew = new FileWriter(file,false)){
+                filew.write("");
+            }
         }
-        File file = new File(resource.getPath());
-        oMapper.writeValue(file, radiaciones);
+        else {
+            oMapper.writeValue(file, radiaciones);
+        }
     }
 }

@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class MedicionService {
@@ -57,5 +59,16 @@ public class MedicionService {
     public void deleteMedicion(Long id){
         String url = apiBaseUrl + "/" + id;
         restTemplate.delete(url);
+    }
+
+    public List<Short>  getAvailableYears() {
+        ResponseEntity<List<Short>> responseEntity = restTemplate.exchange(
+                apiBaseUrl + "/years",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Short>>() {}
+        );
+
+        return responseEntity.getBody();
     }
 }

@@ -7,7 +7,7 @@
 <body>
 <div class="container">
     <h1 th:text="${medicion.pkMedicionID} == null ? 'Agregar Nueva Medición' : 'Editar Medición'"></h1>
-    <form th:action="@{${medicion.pkMedicionID} == null ? '/api/mediciones' : '/api/mediciones/editar/' + ${medicion.pkMedicionID}}" method="post" th:object="${medicion}">
+    <form th:action="@{${medicion.pkMedicionID} == null ? '/mediciones' : '/mediciones/editar/' + ${medicion.pkMedicionID}}" method="post" th:object="${medicion}">
         <div class="form-group">
             <label for="latitud">Latitud</label>
             <input type="text" id="latitud" th:field="*{latitud}" class="form-control" required/>
@@ -37,7 +37,7 @@
             <input type="number" id="radiacion" th:field="*{radiacion}" class="form-control" required/>
         </div>
         <button type="submit" class="btn btn-success">Guardar</button>
-        <a href="/api/mediciones" class="btn btn-secondary">Cancelar</a>
+        <a href="/mediciones" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 </body>

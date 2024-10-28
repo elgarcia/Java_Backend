@@ -32,13 +32,19 @@ public class MedicionController {
     private Radiacion   dtoToRadiacion(MedicionDTO dto){
         return (new Radiacion(dto));
     }
+
+    private MedicionDTO finalDto(MedicionEntity medicionEntity, Short radiaciones){
+        MedicionDTO dto = new MedicionDTO(medicionEntity);
+        dto.setRadiacion(radiaciones);
+        return (dto);
+    }
+
     //Crear Medicion
     @PostMapping
     public ResponseEntity<MedicionDTO>   createMedicion(@RequestBody MedicionDTO medicion) throws IOException {
         MedicionEntity  medicionEntity = convertToEntity(medicion);
         medicionService.create(medicionEntity);
-        MedicionDTO     medicionDTO = convertToDto(medicionEntity);
-        System.out.println(medicionDTO);
+        MedicionDTO     medicionDTO = finalDto(medicionEntity, medicion.getRadiacion());
         radiacionService.saveRadiacion(dtoToRadiacion(medicionDTO));
         return (ResponseEntity.ok(medicionDTO));
     }
@@ -48,7 +54,7 @@ public class MedicionController {
     public ResponseEntity<MedicionDTO>   updateMedicion(@PathVariable("id") Long id, @RequestBody MedicionDTO medicion) throws IOException {
         MedicionEntity medicionEntity = convertToEntity(medicion);
         medicionService.update(id, medicionEntity);
-        MedicionDTO     medicionDTO = convertToDto(medicionEntity);
+        MedicionDTO     medicionDTO = finalDto(medicionEntity, medicion.getRadiacion());
         radiacionService.update(id, dtoToRadiacion(medicionDTO));
         return (ResponseEntity.ok(medicionDTO));
     }
@@ -73,11 +79,16 @@ public class MedicionController {
     }
 
     @GetMapping("/filter/{any}")
-    public ResponseEntity<List<MedicionDTO>> filterByAny(@PathVariable("id") Short any) throws IOException {
+    public ResponseEntity<List<MedicionDTO>> filterByAny(@PathVariable("any") Short any) throws IOException {
         List<MedicionDTO>   filterDto = medicionService.loadMediciones().stream()
                 .filter(medicion -> medicion.getAnho().equals(any))
                 .toList();
 
         return (ResponseEntity.ok(filterDto));
+    }
+
+    @GetMapping("/years")
+    public List<Short>  getYears(){
+        return (medicionService.getAllYears());
     }
 }

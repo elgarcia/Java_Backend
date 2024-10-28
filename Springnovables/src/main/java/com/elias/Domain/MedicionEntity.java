@@ -24,7 +24,7 @@ public class MedicionEntity {
     public MedicionEntity(MedicionDTO dto){
         this.latitud = dto.getLatitud();
         this.longitud = dto.getLongitud();
-        this.anho = dto.getAny();
+        this.anho = dto.getAnho();
         this.temperatura = dto.getTemperatura();
         this.viento = dto.getViento();
         this.precipitacion = dto.getPrecipitacion();

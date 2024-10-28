@@ -30,7 +30,7 @@ public class MedicionService {
             dto.setPkMedicionID(medicion.getPk_MedicionID());
             dto.setLatitud(medicion.getLatitud());
             dto.setLongitud(medicion.getLongitud());
-            dto.setAny(medicion.getAnho());
+            dto.setAnho(medicion.getAnho());
             dto.setTemperatura(medicion.getTemperatura());
             dto.setViento(medicion.getViento());
             dto.setPrecipitacion(medicion.getPrecipitacion());
@@ -43,7 +43,7 @@ public class MedicionService {
                 radiaciones.stream()
                         .filter(r -> latitud.equals(r.getLatitud())
                                 && longitud.equals(r.getLongitud())
-                                && anho.equals(r.getAny()))
+                                && anho.equals(r.getAnho()))
                         .findFirst()
                         .ifPresent(r -> dto.setRadiacion(r.getRadiacion()));
             }

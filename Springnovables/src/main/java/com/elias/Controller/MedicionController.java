@@ -37,8 +37,10 @@ public class MedicionController {
     public ResponseEntity<MedicionDTO>   createMedicion(@RequestBody MedicionDTO medicion) throws IOException {
         MedicionEntity  medicionEntity = convertToEntity(medicion);
         medicionService.create(medicionEntity);
-        radiacionService.saveRadiacion(dtoToRadiacion(medicion));
-        return (ResponseEntity.ok(medicion));
+        MedicionDTO     medicionDTO = convertToDto(medicionEntity);
+        System.out.println(medicionDTO);
+        radiacionService.saveRadiacion(dtoToRadiacion(medicionDTO));
+        return (ResponseEntity.ok(medicionDTO));
     }
 
     //Update Medicion
@@ -46,8 +48,9 @@ public class MedicionController {
     public ResponseEntity<MedicionDTO>   updateMedicion(@PathVariable("id") Long id, @RequestBody MedicionDTO medicion) throws IOException {
         MedicionEntity medicionEntity = convertToEntity(medicion);
         medicionService.update(id, medicionEntity);
-        radiacionService.update(id, dtoToRadiacion(medicion));
-        return (ResponseEntity.ok(medicion));
+        MedicionDTO     medicionDTO = convertToDto(medicionEntity);
+        radiacionService.update(id, dtoToRadiacion(medicionDTO));
+        return (ResponseEntity.ok(medicionDTO));
     }
 
     //Delete Medicion
@@ -72,7 +75,7 @@ public class MedicionController {
     @GetMapping("/filter/{any}")
     public ResponseEntity<List<MedicionDTO>> filterByAny(@PathVariable("id") Short any) throws IOException {
         List<MedicionDTO>   filterDto = medicionService.loadMediciones().stream()
-                .filter(medicion -> medicion.getAny().equals(any))
+                .filter(medicion -> medicion.getAnho().equals(any))
                 .toList();
 
         return (ResponseEntity.ok(filterDto));

@@ -25,6 +25,7 @@ public class RadiacionService {
 
         try(FileWriter fileWriter = new FileWriter(file, true)){
             String  jsonString = oMapper.writeValueAsString(radiacion);
+            System.out.println(jsonString);
             fileWriter.write(jsonString + "\n");
         }
     }
